@@ -46,7 +46,15 @@ class AddComment extends Component {
     return (
       <>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Select aria-label="Default select example">
+          <Form.Select
+            aria-label="Vote Select"
+            value={this.state.review.rate}
+            onChange={(e) => {
+              this.setState({
+                review: { ...this.state.review, rate: e.target.value },
+              })
+            }}
+          >
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -60,7 +68,9 @@ class AddComment extends Component {
             placeholder="I LOVED IT"
             value={this.state.comment.comment}
             onChange={(e) => {
-              this.setState({ comments: { comments: e.target.value } })
+              this.setState({
+                review: { ...this.state.review, comment: e.target.value },
+              })
             }}
           />
           <Button variant="primary" type="submit">
