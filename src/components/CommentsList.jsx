@@ -26,7 +26,9 @@ class CommentsList extends Component {
           comments.map((review) => {
             return (
               <ListGroup>
-                <ListGroup.Item></ListGroup.Item>
+                <ListGroup.Item key={review.elementId}>
+                  {review.rate}/5 - {review.comment}
+                </ListGroup.Item>
               </ListGroup>
             )
           })
@@ -37,3 +39,5 @@ class CommentsList extends Component {
     }
   }
 }
+
+export default CommentsList
